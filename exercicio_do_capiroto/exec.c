@@ -4,7 +4,7 @@
 int main(int argc, char *argv[])
 {
 	int opc;
-	int i =1;
+	int i = 1;
 
 	char menu[] = "\nMenu \n\n (1) Media fatec   \n (2) Ajuste de preco    \n (3) Fibonacci(FOR)   \n (4) Fatorial(FOR)  \n (5) Fibonacci(do/while) \n (6) Fibonacci(While) \n (7)Fatorial(do/while) \n (8) Fatorial(while) \n (9) P.A \n (10) P.G \n (11) Maior/Menor \n (12) Raiz Quadrada \n (13) Exponenciacao \n" ;
 
@@ -108,10 +108,14 @@ int media()
 
 ajuste()
 {
-    float numero, preco, ajus = 0;
+    float numero, preco, ajus;
 
-		printf("Informe o preco: R$ ");
+
+		printf("\nInforme o preco: R$ ");
 		scanf("%f", &numero);
+
+
+		printf("\nO novo valor eh: R$ %.2f \n");
 
 }
 
