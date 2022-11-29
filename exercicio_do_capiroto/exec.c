@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 	int opc;
 	int i = 1;
 
-	char menu[] = "\nMenu \n\n (1) Media fatec   \n (2) Ajuste de preco    \n (3) Fibonacci(FOR)   \n (4) Fatorial(FOR)  \n (5) Fibonacci(do/while) \n (6) Fibonacci(While) \n (7)Fatorial(do/while) \n (8) Fatorial(while) \n (9) P.A \n (10) P.G \n (11) Maior/Menor \n (12) Raiz Quadrada \n (13) Exponenciacao \n" ;
+	char menu[] = "\nMenu \n\n (1) Media fatec   \n (2) Ajuste de preco    \n (3) Fibonacci(FOR)   \n (4) Fatorial(FOR)  \n (5) Fibonacci(do/while) \n (6) Fibonacci(While) \n (7)Fatorial(do/while) \n (8) Fatorial(while) \n (9) P.A \n (10) P.G \n (11) Maior/Menor \n (12) Raiz Quadrada \n (13) Exponenciacao \n (14) Sair \n" ;
 
 while(i)
 {
@@ -93,6 +93,12 @@ while(i)
 			expo();
 		break;
 
+		case 14: 
+
+			printf("Saindo do sistema !");
+
+			i = 0;
+		break;
 	}
 }
  	
@@ -101,6 +107,8 @@ while(i)
 
 int media()
 {
+	int media, m1, m2, p1, p2,t1, t2;
+
 
 	
 	return 0;
@@ -108,15 +116,84 @@ int media()
 
 ajuste()
 {
-    float numero, preco, ajus;
+    float numero, preco, ajus, valornew;
+	int i = 1, opc;
+
+	char menu[] = "\n\nSelecione abaixo o percentual que sera descontado: \n\n (1)Desconto de 1.5% \n (2)Desconto de 2.8% \n (3)Desconto de 3.15% \n (4)Desconto de 4.40% \n (5)Desconto de 5.50% \n (6) Sair \n";
 
 
-		printf("\nInforme o preco: R$ ");
-		scanf("%f", &numero);
+	printf("\nInforme um valor para aplicar o desconto: \nR$ ");
+	scanf("%f", &numero);
 
+		while (i)
+		{
 
-		printf("\nO novo valor eh: R$ %.2f \n");
+			printf("\n%s\n", menu);
 
+			scanf("%d", &opc);
+
+			switch(opc)
+			{
+				case 1:
+				
+					ajus = 1.5 / 100;
+					preco = numero * ajus;
+					
+					valornew = numero - preco;
+
+					printf("\nO novo valor eh: R$ %.2f\n", valornew);
+
+				break;
+
+				case 2:
+						ajus = 2.8 / 100;
+						preco = numero * ajus;
+						valornew = numero - preco;
+
+						printf("\nO novo valor eh: R$ %.2f\n", valornew);
+
+				break;
+	
+				case 3:
+
+						ajus = 3.15 / 100;
+						preco = numero * ajus;
+						valornew = numero - preco;
+
+						printf("\nO novo valor eh: R$ %.2f\n", valornew);
+
+				break;
+				
+				case 4:
+						ajus = 4.40 / 100;
+						preco = numero * ajus;
+						valornew = numero - preco;
+
+						printf("\nO novo valor eh: R$ %.2f\n", valornew);
+				break;
+
+				case 5:
+
+						ajus = 5.50 / 100;
+						preco = numero * ajus;
+						valornew = numero - preco;
+
+						printf("\nO novo valor eh: R$ %.2f\n", valornew);
+				break;
+
+				case 6:
+
+					printf("Saindo do sistema !");
+
+					i = 0;
+				break;
+
+			}
+			
+		}
+	
+
+	return 0;
 }
 
 
@@ -188,31 +265,31 @@ fatorial()
 
 fibodowhile() //ARRUMARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 {
-	int termo, anterior = 1, atual = 1, proximo,cont;
+	int termo, anterior = 1, atual = 1, proximo,cont = 0;
 
 		printf("\n Informe qual o numero, para que seja informado o termo desejado: ");
 		scanf("%d", &termo);
 
 			printf("%d", anterior);
 
-			if (termo < 1)  //Não exibe o termo certo quando o usuario digita 1 ou 2
+			if (termo > 1)  //Não exibe o termo certo quando o usuario digita 1 ou 2
 			{
 				printf("%d", atual);
 
 			}
-			
+
 				do
 				{
-					proximo = anterior + atual;
-					anterior = atual;
-					atual = proximo;
-					
+					if(termo > 2) {
+						proximo = anterior + atual;
+						printf("%d", proximo);
+						anterior = atual;
+						atual = proximo;
 
-					printf("%d", proximo);
+						cont++;
+					}
 
-					cont++;
-
-				} while (cont < termo);
+				} while (cont < termo - 2);
 			
 		printf("\n O termo eh:  %d", atual);
 
@@ -286,11 +363,29 @@ fatwhile()
 
 pa()
 {
+	int termo;
+	float result;
+	 printf("Informe o termo: ");
+	 scanf("%d",&termo);
+	result = (termo * (termo + 1)) / 2;
+	printf("O resultado e7: %f", result);
 
 }
 pg()
 {
+	int termo, cont = 0, coeficiente, resultado;
+	printf("Informe o primeiro termo:");
+	scanf("%d", &termo);
 
+	printf("Informe o coeficiente:");
+	scanf("%d", &coeficiente);
+	resultado = termo * coeficiente;
+	printf("%d", resultado);
+	while(cont <= termo) {
+		resultado = resultado * coeficiente;
+		printf("%d", resultado);
+		cont++;
+	}
 }
 int maiorMenor(){
 	int contador, vetor[5], *valor, maior,menor;  //*valor vai guardar o valor dela no mesmo endereço do VETOR e não o conteudo da posição do vetor
