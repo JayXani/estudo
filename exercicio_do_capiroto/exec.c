@@ -263,8 +263,8 @@ fatorial()
 }
 
 
-fibodowhile() //ARRUMARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-{
+fibodowhile() 
+
 	int termo, anterior = 1, atual = 1, proximo,cont = 0;
 
 		printf("\n Informe qual o numero, para que seja informado o termo desejado: ");
@@ -272,7 +272,7 @@ fibodowhile() //ARRUMARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 
 			printf("%d", anterior);
 
-			if (termo > 1)  //Não exibe o termo certo quando o usuario digita 1 ou 2
+			if (termo > 1) 
 			{
 				printf("%d", atual);
 
