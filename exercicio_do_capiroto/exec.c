@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <math.h>
 
+
 int main(int argc, char *argv[])
 {
 	int opc;
 	int i = 1;
 
-	char menu[] = "\nMenu \n\n (1) Media fatec   \n (2) Ajuste de preco    \n (3) Fibonacci(FOR)   \n (4) Fatorial(FOR)  \n (5) Fibonacci(do/while) \n (6) Fibonacci(While) \n (7)Fatorial(do/while) \n (8) Fatorial(while) \n (9) P.A \n (10) P.G \n (11) Maior/Menor \n (12) Raiz Quadrada \n (13) Exponenciacao \n (14) Sair \n" ;
+	char menu[] = "\nMenu \n\n (1) Media fatec   \n (2) Ajuste de preco    \n (3) Fibonacci(FOR)   \n (4) Fatorial(FOR)  \n (5) Fibonacci(do/while) \n (6) Fibonacci(While) \n (7)Fatorial(do/while) \n (8) Fatorial(while) \n (9) P.A \n (10) P.G \n (11) Maior/Menor \n (12) Raiz Quadrada \n (13) Exponenciacao \n (14) Sair \n\n Selecione uma Opcao: ";
 
 while(i)
 {
-	printf("%s\n", menu);
+	printf("\n%s", menu);
 
 	scanf("%d",&opc);
 		
@@ -105,12 +106,78 @@ while(i)
     return 0;
 }
 
-int media()
+media()
 {
-	int media, m1, m2, p1, p2,t1, t2;
-
+	float media, m1, m2, p1, p2, pr,t1, t2;
+	char menu[] = "\n (1) Nota Recuperacao (Selecione esta opcao somente se o aluno fez prova de recuperacao) \n (2) Ir para a situacao do aluno \n Opcao: ";
+	int opc, i = 1;
 
 	
+		printf("\nInforme a nota da P1: ");
+		scanf("%f",&p1);
+
+		printf("\nInforme a nota da P2: ");
+		scanf("%f", &p2);
+		
+		printf("\nInforme a nota da T1: ");
+		scanf("%f", &t1);
+
+		printf("\nInforme a nota da T2: ");
+		scanf("%f", &t2);
+
+			m1 = (p1 + t1)/2;
+			m2 = (p2 + t2)/2;
+			media = (m1 + m2)/2;
+
+
+			printf("\nA media do aluno ATE O MOMENTO eh: %.2f \n",media);
+
+			printf("\nSelecione uma das opcoes abaixo: \n");
+			printf("%s", menu);
+
+			while (i)
+			{
+				
+				scanf("%d", &opc);
+				
+
+					switch (opc)
+					{
+					case 1:
+							printf("\nInforme qual a nota do aluno na recuperacao: ");
+							scanf("%f",&pr);
+
+							media = (media + pr)/2;
+
+								if(media < 6)
+								{
+					
+									printf("\nO aluno foi REPROVADO\nCom media de %.2f \n", media);
+								}
+								else 
+								{
+									printf("\nO aluno foi APROVADO\nCom media de %.2f \n", media);
+								}
+
+								i = 0;
+					break;
+					case 2:
+				
+							if(media < 6)
+							{
+								printf("\nO aluno foi REPROVADO\nCom media de %.2f \n", media);
+							}
+							else 
+							{
+								printf("\nO aluno foi APROVADO\nCom media de %.2f \n", media);
+							}
+
+							i = 0;
+					break;
+					}
+				
+			}
+
 	return 0;
 }
 
@@ -119,16 +186,16 @@ ajuste()
     float numero, preco, ajus, valornew;
 	int i = 1, opc;
 
-	char menu[] = "\n\nSelecione abaixo o percentual que sera descontado: \n\n (1)Desconto de 1.5% \n (2)Desconto de 2.8% \n (3)Desconto de 3.15% \n (4)Desconto de 4.40% \n (5)Desconto de 5.50% \n (6) Sair \n";
+	char menu[] = "Selecione abaixo o percentual que sera descontado: \n\n (1)Desconto de 1.5% \n (2)Desconto de 2.8% \n (3)Desconto de 3.15% \n (4)Desconto de 4.40% \n (5)Desconto de 5.50% \n (6) Sair \n\n Selecione uma opcao: ";
 
 
-	printf("\nInforme um valor para aplicar o desconto: \nR$ ");
+	printf("\nInforme um valor para aplicar o desconto: R$ ");
 	scanf("%f", &numero);
 
 		while (i)
 		{
 
-			printf("\n%s\n", menu);
+			printf("\n%s", menu);
 
 			scanf("%d", &opc);
 
@@ -142,7 +209,9 @@ ajuste()
 					valornew = numero - preco;
 
 					printf("\nO novo valor eh: R$ %.2f\n", valornew);
-
+					
+				
+					i = 0;
 				break;
 
 				case 2:
@@ -151,7 +220,8 @@ ajuste()
 						valornew = numero - preco;
 
 						printf("\nO novo valor eh: R$ %.2f\n", valornew);
-
+					
+					i = 0;
 				break;
 	
 				case 3:
@@ -161,7 +231,7 @@ ajuste()
 						valornew = numero - preco;
 
 						printf("\nO novo valor eh: R$ %.2f\n", valornew);
-
+					i = 0;
 				break;
 				
 				case 4:
@@ -170,6 +240,7 @@ ajuste()
 						valornew = numero - preco;
 
 						printf("\nO novo valor eh: R$ %.2f\n", valornew);
+					i = 0;
 				break;
 
 				case 5:
@@ -179,6 +250,7 @@ ajuste()
 						valornew = numero - preco;
 
 						printf("\nO novo valor eh: R$ %.2f\n", valornew);
+					i = 0;
 				break;
 
 				case 6:
@@ -197,7 +269,7 @@ ajuste()
 }
 
 
-int fibo()
+fibo()
 {
 	int ant = 1, atual = 1, prox, contador, termo;
 
@@ -264,7 +336,7 @@ fatorial()
 
 
 fibodowhile() 
-
+{
 	int termo, anterior = 1, atual = 1, proximo,cont = 0;
 
 		printf("\n Informe qual o numero, para que seja informado o termo desejado: ");
@@ -272,7 +344,7 @@ fibodowhile()
 
 			printf("%d", anterior);
 
-			if (termo > 1) 
+			if(termo > 1)
 			{
 				printf("%d", atual);
 
