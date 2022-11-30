@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 	int opc;
 	int i = 1;
 
-	char menu[] = "\nMenu \n\n (1) Media fatec   \n (2) Ajuste de preco    \n (3) Fibonacci(FOR)   \n (4) Fatorial(FOR)  \n (5) Fibonacci(do/while) \n (6) Fibonacci(While) \n (7)Fatorial(do/while) \n (8) Fatorial(while) \n (9) P.A \n (10) P.G \n (11) Maior/Menor \n (12) Raiz Quadrada \n (13) Exponenciacao \n (14) Sair \n\n Selecione uma Opcao: ";
+	char menu[] = "\nMenu \n\n (1) Media fatec   \n (2) Ajuste de preco    \n (3) Fibonacci(FOR)   \n (4) Fatorial(FOR)  \n (5) Fibonacci(do/while) \n (6) Fibonacci(While) \n (7) Fatorial(do/while) \n (8) Fatorial(while) \n (9) P.A \n (10) P.G \n (11) Maior/Menor \n (12) Raiz Quadrada \n (13) Exponenciacao \n (14) Sair \n\n Selecione uma Opcao: ";
 
 while(i)
 {
@@ -446,18 +446,23 @@ pa()
 pg()
 {
 	int termo, cont = 0, coeficiente, resultado;
+	
 	printf("Informe o primeiro termo:");
 	scanf("%d", &termo);
 
 	printf("Informe o coeficiente:");
 	scanf("%d", &coeficiente);
-	resultado = termo * coeficiente;
-	printf("%d", resultado);
-	while(cont <= termo) {
-		resultado = resultado * coeficiente;
+
+		resultado = termo * coeficiente;
+
 		printf("%d", resultado);
-		cont++;
-	}
+
+			while(cont <= termo)
+			{
+				resultado = resultado * coeficiente;
+				printf("%d", resultado);
+				cont++;
+			}
 }
 int maiorMenor(){
 	int contador, vetor[5], *valor, maior,menor;  //*valor vai guardar o valor dela no mesmo endereço do VETOR e não o conteudo da posição do vetor
