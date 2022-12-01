@@ -301,35 +301,21 @@ fibo()
 }
 
 
-int fat (int n);
-
-int fat (int n)
-{
-	double resultado;
-
-		if(n <= 1)
-		{
-
-			return(1);
-		}
-		else
-		{
-
-			resultado = (n * fat(n-1)); //exemplo, N = 4 * fat(4-1), a conta será, 4 * 3, na proxima chamada N = 3 e fat(3- 1), a conta será 3 * 2 e assim por diante, seguindo essa lógica, fat vale 4 * 3 = 12, na próxima chamada fat vale 12 * 2 = 24, depois fat vale 24 * 1 = 24 e depois sae do loop
-
-		}
-	return(resultado);
-}
-
 fatorial()
 {
-	int numero, result = 0;
+	int numero, fat = 0;
 
-		printf("\nInforme o valor para o calculo do fatorial: ");
+		printf("\nInforme um numero para que seja feito o fatorial: ");
 		scanf("%d", &numero);
 
-			result = fat(numero);
-		printf("O fatorial eh: %d\n", result);
+			while (fat > 1)
+			{
+				fat = fat * n(n - 1);
+			}
+		
+		printf("\nO fatorial eh: %d", fat);
+
+
 
 	return(0);
 }
