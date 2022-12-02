@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 	int opc;
 	int i = 1;
 
-	char menu[] = "\nMenu \n\n (1) Media fatec   \n (2) Ajuste de preco    \n (3) Fibonacci(FOR)   \n (4) Fatorial(FOR)  \n (5) Fibonacci(do/while) \n (6) Fibonacci(While) \n (7) Fatorial(do/while) \n (8) Fatorial(while) \n (9) P.A \n (10) P.G \n (11) Maior/Menor \n (12) Raiz Quadrada \n (13) Exponenciacao \n (14) Sair \n\n Selecione uma Opcao: ";
+	char menu[] = "\nMenu \n\n (1) Media fatec   \n (2) Ajuste de preco    \n (3) Fibonacci(FOR)   \n (4) Fatorial(FOR)  \n (5) Fibonacci(do/while) \n (6) Fibonacci(While) \n (7) Fatorial(do/while) \n (8) Fatorial(while) \n (9) P.A \n (10) P.G \n (11) Maior/Menor \n (12) Raiz Quadrada \n (13) Exponenciacao \n (14)Funcao extra FATORIAL RECURSIVA \n (15) Sair \n\n Selecione uma Opcao: ";
 
 while(i)
 {
@@ -37,7 +37,7 @@ while(i)
 
 		case 4:
 
-			fatorial();
+			fatorialFOR();
 
 		break;
 
@@ -94,7 +94,13 @@ while(i)
 			expo();
 		break;
 
-		case 14: 
+		case 14:
+
+			fatRECUR();
+
+		break;
+
+		case 15: 
 
 			printf("Saindo do sistema !");
 
@@ -106,7 +112,7 @@ while(i)
     return 0;
 }
 
-media()
+int media()
 {
 	float media, m1, m2, p1, p2, pr,t1, t2;
 	char menu[] = "\n (1) Nota Recuperacao (Selecione esta opcao somente se o aluno fez prova de recuperacao) \n (2) Ir para a situacao do aluno \n Opcao: ";
@@ -181,7 +187,7 @@ media()
 	return 0;
 }
 
-ajuste()
+int ajuste()
 {
     float numero, preco, ajus, valornew;
 	int i = 1, opc;
@@ -269,7 +275,7 @@ ajuste()
 }
 
 
-fibo()
+int fibo()
 {
 	int ant = 1, atual = 1, prox, contador, termo;
 
@@ -301,27 +307,26 @@ fibo()
 }
 
 
-fatorial()
+int fatorialFOR()
 {
-	int numero, fat = 0;
+	int numero = 1, fat;
 
 		printf("\nInforme um numero para que seja feito o fatorial: ");
 		scanf("%d", &numero);
 
-			while (fat > 1)
+			for(fat = 1; numero > 1; numero--)
 			{
-				fat = fat * n(n - 1);
+				fat = fat * numero;
 			}
-		
-		printf("\nO fatorial eh: %d", fat);
 
+		printf("O fatorial eh: %d", fat);
 
 
 	return(0);
 }
 
 
-fibodowhile() 
+int fibodowhile() 
 {
 	int termo, anterior = 1, atual = 1, proximo,cont = 0;
 
@@ -355,7 +360,7 @@ fibodowhile()
 }
 
 
-fibowhile()
+int fibowhile()
 {
 	int termo, cont = 2, anterior = 1, atual = 1, proximo; 
 		
@@ -381,7 +386,7 @@ fibowhile()
 	return(0);
 }
 
-fatdowhile()
+int fatdowhile()
 {
 	int fat, numero = 0;
 
@@ -401,7 +406,7 @@ fatdowhile()
 
 	return(0);
 }
-fatwhile()
+int fatwhile()
 {
 	int fat = 1, numero = 0;
 
@@ -419,7 +424,7 @@ fatwhile()
 	return(0);
 }
 
-pa()
+int pa()
 {
 	int termo;
 	float result;
@@ -429,7 +434,7 @@ pa()
 	printf("O resultado e7: %f", result);
 
 }
-pg()
+int pg()
 {
 	int termo, cont = 0, coeficiente, resultado;
 	
@@ -495,7 +500,7 @@ int maiorMenor(){
 		
 	return 0;
 }
-raiz()
+int raiz()
 {
 	int numero, resultado = 0;
 
@@ -507,7 +512,7 @@ raiz()
 
 }
 
-expo()
+int expo()
 {
 	int num, expo, result = 0;
 
@@ -521,4 +526,34 @@ expo()
 
 	printf("\nO resultado eh: %d", result);
 
+}
+
+int fat (num, resul);
+
+int fat (num, resul)
+{
+	if(num < 1)
+	{
+
+		return(1);
+	}
+	else
+	{
+
+		resul = num * fat(num- 1);  //Exemplo num = 4, resul = 4 * fat(4-1), ou seja, resul = 4 * 3 e assim por diante
+
+	}
+	return(resul);
+}
+
+int fatRECUR()
+{
+	int numero, resultado;
+
+		printf("Informe o numero para a realizacao do fatorial: ");
+		scanf("%d", &numero);
+
+			resultado = fat(numero);
+
+		printf("O fatorial eh: %d", resultado);
 }
