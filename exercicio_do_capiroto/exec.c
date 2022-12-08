@@ -390,7 +390,7 @@ int fatdowhile()
 {
 	int fat, numero = 0;
 
-		printf("\n Informe um valor para a fatoracao: ");
+		printf("\nInforme um valor para a fatoracao: ");
 		scanf("%d", &numero);
 
 		fat = 1;  //se eu colocar dentro do laço o resultado sempre será 2, porque  fat sempre será = 1
