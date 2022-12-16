@@ -458,7 +458,7 @@ int pg()
 int maiorMenor(){
 	int contador, vetor[5], *valor, maior,menor;  //*valor vai guardar o valor dela no mesmo endereço do VETOR e não o conteudo da posição do vetor
 
-		valor = vetor; 
+ 	valor = vetor;
 
 	for(contador = 0; contador < 5; contador++)
 	{

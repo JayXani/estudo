@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 		
 /*
     printf("Informe seu nome: ");		//lembrando que a string para no espaço e o que vem depois é ignorado
-	scanf("%[^\n]", nome);			// [^\n] Quer dizer que ele vai ignorar os espaços e ele considerarque a hora de para é somente quando o usuario clicar em enter
+	scanf("%[^\n]", nome);			// [^\n] Quer dizer que ele vai ignorar os espaços e ele considera que a hora de para é somente quando o usuario clicar em enter
 
 	printf("O nome eh: %s", nome);
 
